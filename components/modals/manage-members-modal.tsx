@@ -15,9 +15,7 @@ import UserAvatar from "../user-avatar";
 import qs from "query-string";
 import {
   Check,
-  Gavel,
   Loader,
-  Loader2,
   MoreVertical,
   Shield,
   ShieldAlert,

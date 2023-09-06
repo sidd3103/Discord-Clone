@@ -54,7 +54,7 @@ export async function DELETE(
 
     return new NextResponse("Succesfully Deleted", { status: 200 });
   } catch (error) {
-    console.log("Servers ID Patch", error);
+    console.log("Servers ID Delete", error);
     return new NextResponse("Error", { status: 500 });
   }
 }
