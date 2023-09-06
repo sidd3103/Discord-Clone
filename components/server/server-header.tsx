@@ -13,12 +13,9 @@ import {
   ChevronDown,
   LogOut,
   PlusCircle,
-  Settings,
   Settings2,
-  Trash,
   Trash2,
   UserPlus2,
-  Users,
   Users2,
 } from "lucide-react";
 import { useModal } from "@/hooks/use-modal-store";
@@ -52,13 +49,19 @@ const ServerHeader = ({
           </DropdownMenuItem>
         )}
         {isAdmin && (
-          <DropdownMenuItem className="px-3 py-2 text-sm cursor-pointer">
+          <DropdownMenuItem
+            onClick={() => onOpen("serverSettings", { server })}
+            className="px-3 py-2 text-sm cursor-pointer"
+          >
             Server Settings
             <Settings2 className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
         )}
         {isAdmin && (
-          <DropdownMenuItem className="px-3 py-2 text-sm cursor-pointer">
+          <DropdownMenuItem
+            onClick={() => onOpen("manageMembers", { server })}
+            className="px-3 py-2 text-sm cursor-pointer"
+          >
             Manage Members
             <Users2 className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>

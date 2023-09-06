@@ -10,6 +10,7 @@ export async function PATCH(
 ) {
   try {
     const profile = await currentProfile();
+    const { name, imageUri } = await req.json();
 
     if (!profile) return new NextResponse("Unauthorized", { status: 401 });
     if (!params.serverId)
@@ -21,13 +22,15 @@ export async function PATCH(
         profileId: profile.id,
       },
       data: {
-        inviteCode: v4(),
+        name,
+        imageUri,
       },
     });
 
     return NextResponse.json(server);
+    
   } catch (error) {
-    console.log("Servers ID", error);
+    console.log("Servers ID Patch", error);
     return new NextResponse("Error", { status: 500 });
   }
 }
