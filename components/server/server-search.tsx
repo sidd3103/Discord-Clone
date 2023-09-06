@@ -48,7 +48,6 @@ const ServerSearch = ({ data }: ServerSearchProps) => {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  console.log(data[0]);
   return (
     <>
       <button
