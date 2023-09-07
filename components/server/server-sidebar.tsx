@@ -117,7 +117,7 @@ const ServerSidebar = async ({ serverId }: { serverId: string }) => {
           />
         </div>
         <Separator className="bg-zinc-200 dark:bg-zinc-700 rounded-md my-2" />
-        {textChannels?.length && (
+        {!!textChannels?.length && (
           <div className="mb-2">
             <ServerSection
               sectionType="channels"
@@ -138,7 +138,7 @@ const ServerSidebar = async ({ serverId }: { serverId: string }) => {
             </div>
           </div>
         )}
-        {audioChannels?.length && (
+        {!!audioChannels?.length && (
           <div className="mb-2">
             <ServerSection
               sectionType="channels"
@@ -159,7 +159,7 @@ const ServerSidebar = async ({ serverId }: { serverId: string }) => {
             </div>
           </div>
         )}
-        {videoChannels?.length && (
+        {!!videoChannels?.length && (
           <div className="mb-2">
             <ServerSection
               sectionType="channels"
@@ -180,7 +180,7 @@ const ServerSidebar = async ({ serverId }: { serverId: string }) => {
             </div>
           </div>
         )}
-        {members?.length && (
+        {!!members?.length && (
           <div className="mb-2">
             <ServerSection
               sectionType="members"
