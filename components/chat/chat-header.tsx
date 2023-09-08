@@ -5,6 +5,8 @@ import { redirect } from "next/navigation";
 import { MobileToggle } from "../mobile-toggle";
 import { IM_Fell_French_Canon } from "next/font/google";
 import UserAvatar from "../user-avatar";
+import { SocketIndicator } from "../socket-indicator";
+import { ChatVideoButton } from "./chat-video-button";
 
 interface ChatHeaderProps {
   serverId: string;
@@ -55,6 +57,10 @@ const ChatHeader = async ({
       <MobileToggle serverId={serverId} />
       {icon}
       <p className="font-semibold text-md text-black dark:text-white">{name}</p>
+      <div className="ml-auto flex items-center">
+        {type === "conversation" && <ChatVideoButton />}
+        <SocketIndicator />
+      </div>
     </div>
   );
 };
